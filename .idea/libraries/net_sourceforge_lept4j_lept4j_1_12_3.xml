@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="net.sourceforge.lept4j:lept4j:1.12.3" type="repository">
+    <properties maven-id="net.sourceforge.lept4j:lept4j:1.12.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/lept4j/lept4j/1.12.3/lept4j-1.12.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jul-to-slf4j-1.7.25">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../jul-to-slf4j-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../slf4j-api-2.0.0-alpha1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../tess4j-4.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

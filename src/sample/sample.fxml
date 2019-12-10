@@ -1,0 +1,275 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<AnchorPane fx:controller="sample.Controllers.HomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #fcbb17; -fx-background-radius: 10;"
+            xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane layoutY="60.0" prefHeight="570.0" prefWidth="650.0">
+            <children>
+                <Label layoutX="50.0" layoutY="35.0" text="Select Image" textFill="#ddd9d9">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+
+                <TextField fx:id="path" layoutX="40.0" layoutY="70.0" prefHeight="34.0" prefWidth="500.0"
+                           style="-fx-border-color: #249bbf; -fx-background-color: #062b3a; -fx-background-insets: 0; -fx-text-fill: white "
+                           styleClass="text-input" stylesheets="@Styles/style.css"/>
+                <Button fx:id="BrowsButton" layoutX="600" layoutY="70" mnemonicParsing="true" prefHeight="34.0"
+                        prefWidth="350.0" style="-fx-background-color:
+                        #bdbbc0;" text="BROWSE" textFill="#252525" onAction="#handleBrowseButtonAction"/>
+
+
+                <Label layoutX="340.0" layoutY="300.0" text="Select Enhancement Method" textFill="#ddd9d9">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="135.0" text="Value" textFill="#ddd9d9">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+                <Slider fx:id="mySlider"
+                        disable="true"
+                        blockIncrement="1.0"
+                        prefWidth="900.0" layoutX="55.0" layoutY="135.0"
+                        majorTickUnit="1.0" max="10.0"
+                        minorTickCount="0" prefHeight="14.0" showTickLabels="true" showTickMarks="true"
+                        snapToTicks="true"/>
+
+                <CheckBox selected="true" disable="true" fx:id="copulativeBox" layoutX="850.0" layoutY="225.0" text="cumulative" style="-fx-text-fill: white"/>
+
+
+
+
+
+                <TextField disable="true" fx:id="angleTextField"
+                           prefWidth="350" prefHeight="34" layoutY="200.0" layoutX="450" promptText="Enter Angle"
+                />
+                <Button fx:id="imgDetailBtn" disable="true" layoutX="50.0" layoutY="200.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="350.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 20;  -fx-text-fill: white"
+                        onAction="#showImageDetailsButtonAction" text="Show Details Image " textFill="#fcbb17"
+                />
+
+                <Button fx:id="processBtn" disable="true" layoutX="50.0" layoutY="250.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="350.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 20;  -fx-text-fill: white"
+                        onAction="#ProcessAction" text="Process" textFill="#24b2d6"
+                />
+                <Button disable="true" fx:id="reloadButton" layoutX="450.0" layoutY="250.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="350.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#handleReloadButtonAction" text="Reload" textFill="#24b2d6"
+                />
+
+
+
+
+
+
+
+                <Button fx:id="histogramBtn" disable="false" layoutX="20.0" layoutY="350.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#HistogramBtnAction" text="Histogram Equalization" textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="ZoomInbtn" layoutX="350.0" layoutY="350.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#ZoomInButtonAction" text="Zoom In" textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="Zoomoutbtn" layoutX="680.0" layoutY="350.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#ZoomoutButtonAction" text="Zoom out" textFill="#24b2d6"
+                />
+                <Button fx:id="Brightnessbtn" disable="false" layoutX="20.0" layoutY="400.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#BrightnessButtonAction" text="Brightness  " textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="Darknessbnt" layoutX="350.0" layoutY="400.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#DarknessButtonAction" text="Darkness" textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="Contrastbtn" layoutX="680.0" layoutY="400.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#ContrastButtonAction" text="Contrast" textFill="#24b2d6"
+                />
+                <Button fx:id="Negativebtn" disable="false" layoutX="20.0" layoutY="450.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#NegativeButtonAction" text="Negative" textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="Thresholdbtn" layoutX="350.0" layoutY="450.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#ThresholdButtonAction" text="Threshold" textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="Rotationbtn" layoutX="680.0" layoutY="450.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#RotationButtonAction" text="Rotation " textFill="#24b2d6"
+                />
+                <Button fx:id="Flipbtn" disable="false" layoutX="20.0" layoutY="500.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#FlipButtonAction" text="Flip" textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="LogTransformationbtn" layoutX="350.0" layoutY="500.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#LogTransformationButtonAction" text="Log Transformation " textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="PowerTransformationbtn" layoutX="680.0" layoutY="500.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#PowerTransformationButtonAction" text="Power Transformation" textFill="#24b2d6"
+                />
+                <Button fx:id="Blurbtn" disable="false" layoutX="20.0" layoutY="550.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#BlurButtonAction" text="Blur" textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="GaussianBlurbtn" layoutX="350.0" layoutY="550.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#GaussianBlurButtonAction" text="Gaussian Blur" textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="MedianBlurbtn" layoutX="680.0" layoutY="550.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#MedianBlurButtonAction" text="Median Blur" textFill="#24b2d6"
+                />
+                <Button fx:id="LowPassFilterbtn" disable="false" layoutX="20.0" layoutY="600.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: forestgreen; -fx-background-radius: 5;  -fx-text-fill: white"
+                        onAction="#LowPassFilterButtonAction" text="Low Pass Filter" textFill="#24b2d6"
+                />
+                <Button disable="false" fx:id="TextDetectionbtn" layoutX="350.0" layoutY="600.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#TextDetectionButtonAction" text="Text Detection" textFill="#24b2d6"
+                />
+
+                <Button disable="false" fx:id="FaceDetectionbtn" layoutX="680.0" layoutY="600.0" mnemonicParsing="false"
+                        prefHeight="34.0"
+                        prefWidth="300.0"
+                        style="-fx-background-color: chocolate; -fx-background-radius: 5; -fx-text-fill: white"
+                        onAction="#FaceDetectionButtonAction" text="Face Detection" textFill="#24b2d6"
+                />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <Button fx:id="closeButton" layoutX="450.0" layoutY="680.0" mnemonicParsing="false" prefHeight="34.0"
+                        prefWidth="120.0"
+                        style="-fx-background-color: red; -fx-background-radius: 5; -fx-text-fill: white" text="Cancel"
+                        textFill="#252525"
+                        onAction="#handleCancelButtonAction"/>
+
+
+                <Label layoutX="850.0" layoutY="900.0" text="Ahmed Ashraf" textFill="#BC8B00">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label layoutX="400.0" layoutY="30.0" text="Image Processing" textFill="#ddd9d9">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
